@@ -1,0 +1,32 @@
+.formWrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  margin: 0 auto;
+
+}
+
+.logInInput {
+  margin: 10px;
+  height: 20px
+
+}
+
+.btnGo {
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  background: #0B63F6;
+  box-shadow: 0 3px 0 #003CC5;
+  padding: 5px 15px;
+  margin: 5px auto;
+  max-width: 80px;
+}
+
+.btnGo:hover {
+  background: #003CC5;
+  box-shadow: 0 2.5px 0 #0041c5;
+  position: relative;
+  top: 0.5px;
+}

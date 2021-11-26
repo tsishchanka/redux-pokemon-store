@@ -1,0 +1,39 @@
+.productCard {
+  min-height: 300px;
+}
+
+.productImg {
+  width: 50%;
+}
+
+.btnAdd {
+  border: none;
+  padding: 10px 28px;
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 30px #eee;
+  border-radius: 10px;
+  background-image: linear-gradient(to right, #8baeff 0%, #9bbff8 51%, #0031a6 100%);
+}
+
+.btnAdd:hover {
+  background-position: right center;
+}
+
+.btnDelete {
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 30px #eee;
+  border-radius: 10px;
+  background-image: linear-gradient(to right, #003CC5 0%, #4988ef 51%, #003CC5 100%);
+}
+
+.btnDelete:hover {
+  background-position: right center;
+}
