@@ -24,7 +24,8 @@ const RegistrationPageLayout = ({
   return (
     <div>
       <h1>Hello</h1>
-      <p>Create a personal account</p>
+      <h3>Create a personal account</h3>
+      <p>Please, fill in all fields of the form.</p>
 
       <Box
         className={styles.formWrapper}
