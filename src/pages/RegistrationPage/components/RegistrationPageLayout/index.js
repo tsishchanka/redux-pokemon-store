@@ -109,7 +109,15 @@ const RegistrationPageLayout = ({
           {signUpData.passwordConfirmation !== signUpData.password
             ? "Password don't match"
             : ""}
-          {error}
+          {error && (
+            <div>
+              <div>• Email must be an email</div>
+              <div>
+                • Password must be at least 8 characters long and also contain a
+                number
+              </div>
+            </div>
+          )}
         </span>
       </Box>
 
