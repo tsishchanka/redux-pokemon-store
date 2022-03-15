@@ -12,7 +12,7 @@ import styles from "./styles.module.scss";
 import React from "react";
 import { Link } from "react-router-dom";
 
-const ariaLabel = { "aria-label": "description" };
+//const ariaLabel = { "aria-label": "description" };
 
 const RegistrationPageLayout = ({
   signUpData,
@@ -36,80 +36,97 @@ const RegistrationPageLayout = ({
         noValidate
         autoComplete="off"
       >
-        <Input
-          className={styles.InputArea}
-          placeholder="E-mail"
-          //  inputProps={ariaLabel}
-          type="email"
-          value={signUpData.email}
-          name="email"
-          onChange={onChange}
-        />
-        <Input
-          className={styles.InputArea}
-          placeholder="First Name"
-          // inputProps={ariaLabel}
-          type="text"
-          value={signUpData.firstName}
-          name="firstName"
-          onChange={onChange}
-        />
-        <Input
-          className={styles.InputArea}
-          placeholder="Last Name"
-          // inputProps={ariaLabel}
-          type="text"
-          value={signUpData.lastName}
-          name="lastName"
-          onChange={onChange}
-        />
-        <FormControl className={styles.gender}>
-          <Select
-            labelId=" demo-simple-select-label"
-            id=" demo-simple-select"
-            value={signUpData.gender}
+        <div className={styles.inputWrapper}>
+          <div className={styles.inputName}>E-mail</div>
+          <Input
+            className={styles.InputArea}
+            type="email"
+            value={signUpData.email}
+            name="email"
             onChange={onChange}
-            name={"gender"}
-            title=" Select your gender"
-          >
-            <MenuItem value={"male"}>Male</MenuItem>
-            <MenuItem value={"female"}>Female</MenuItem>
-          </Select>
-        </FormControl>
-        <Input
-          className={styles.InputArea}
-          placeholder="Password"
-          //inputProps={ariaLabel}
-          type="password"
-          value={signUpData.password}
-          name="password"
-          onChange={onChange}
-        />
-        <Input
-          className={styles.InputArea}
-          placeholder="Confirm Password"
-          // inputProps={ariaLabel}
-          type="text"
-          value={signUpData.passwordConfirmation}
-          name="passwordConfirmation"
-          onChange={onChange}
-        />
-        <Input
-          className={styles.InputArea}
-          placeholder="Phone Number"
-          inputProps={ariaLabel}
-          type="tel"
-          value={signUpData.phone}
-          name="phone"
-          onChange={onChange}
-        />
+          />
+        </div>
+
+        <div className={styles.inputWrapper}>
+          <div className={styles.inputName}>First Name</div>
+          <Input
+            className={styles.InputArea}
+            // inputProps={ariaLabel}
+            type="text"
+            value={signUpData.firstName}
+            name="firstName"
+            onChange={onChange}
+          />
+        </div>
+
+        <div className={styles.inputWrapper}>
+          <div className={styles.inputName}>Last Name</div>
+          <Input
+            className={styles.InputArea}
+            type="text"
+            value={signUpData.lastName}
+            name="lastName"
+            onChange={onChange}
+          />
+        </div>
+
+        <div className={styles.inputWrapper}>
+          <div className={styles.inputName}>Gender</div>
+          <FormControl className={styles.gender}>
+            <Select
+              labelId=" demo-simple-select-label"
+              id=" demo-simple-select"
+              value={signUpData.gender}
+              onChange={onChange}
+              name={"gender"}
+              title=" Select your gender"
+              className={styles.selectGender}
+            >
+              <MenuItem value={"male"}>Male</MenuItem>
+              <MenuItem value={"female"}>Female</MenuItem>
+            </Select>
+          </FormControl>
+        </div>
+
+        <div className={styles.inputWrapper}>
+          <div className={styles.inputName}>Password</div>
+          <Input
+            className={styles.InputArea}
+            type="password"
+            value={signUpData.password}
+            name="password"
+            onChange={onChange}
+          />
+        </div>
+
+        <div className={styles.inputWrapper}>
+          <div className={styles.inputName}>Confirm Password</div>
+          <Input
+            className={styles.InputArea}
+            type="password"
+            value={signUpData.passwordConfirmation}
+            name="passwordConfirmation"
+            onChange={onChange}
+          />
+        </div>
+
+        <div className={styles.inputWrapper}>
+          <div className={styles.inputName}>Phone Number</div>
+          <Input
+            className={styles.InputArea}
+            type="tel"
+            value={signUpData.phone}
+            name="phone"
+            onChange={onChange}
+          />
+        </div>
         <Button variant="primary" type="submit" onClick={onSubmit}>
           Create account
         </Button>
         <span className={styles.passwordInfo}>
-          {signUpData.passwordConfirmation !== signUpData.password
-            ? "Password don't match"
-            : ""}
+          {signUpData.passwordConfirmation > 0 &&
+            signUpData.passwordConfirmation !== signUpData.password &&
+            "Password don't match"}
           {error && (
             <div>
               <div>• Email must be an email</div>

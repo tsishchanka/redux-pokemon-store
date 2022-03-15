@@ -3,6 +3,7 @@ import styles from "./styles.module.scss";
 import { ROUTES } from "../../../../routes/routeNames";
 import { Link } from "react-router-dom";
 
+
 const EmptyCardPageLayout = () => {
   return (
     <div>
