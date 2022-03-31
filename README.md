@@ -1,3 +1,3 @@
 # redux-pokemon-store
 
-### https://pokemonst.herokuapp.com/
+### https://pokemonst.herokuapp.com/auth/signup
